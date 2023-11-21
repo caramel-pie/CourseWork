@@ -1,13 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI;
-using MySqlX.XDevAPI.Relational;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+using Year2_Lab1.Models;
 
 namespace Year2_Lab1
 {
@@ -78,7 +71,7 @@ namespace Year2_Lab1
         }
         public int CreateItem(Item item, int oid, Receipt receipt)
         {
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `items` (`material_id`, `title`, `pledget`, `condition`) VALUES(@t, @ti, @pg, @con); SELECT LAST_INSERT_ID();", this.GetConnection());
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `items` (`material_id`, `title`, `pledget`, `condition`, type) VALUES(@t, @ti, @pg, @con, ''); SELECT LAST_INSERT_ID();", this.GetConnection());
             cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = item.material_id;
             cmd.Parameters.Add("@ti", MySqlDbType.VarChar).Value = item.title;
             cmd.Parameters.Add("@pg", MySqlDbType.Int64).Value = item.pledget;
