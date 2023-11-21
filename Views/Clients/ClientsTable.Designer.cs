@@ -44,21 +44,23 @@
             // 
             dataGridView1.BackgroundColor = Color.MistyRose;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(11, 73);
+            dataGridView1.Location = new Point(8, 44);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(1075, 149);
+            dataGridView1.Size = new Size(752, 89);
             dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Lucida Fax", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Cornsilk;
-            label1.Location = new Point(422, 33);
+            label1.Location = new Point(295, 20);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(237, 37);
+            label1.Size = new Size(138, 26);
             label1.TabIndex = 1;
             label1.Text = "List of clients";
             // 
@@ -67,10 +69,11 @@
             buttonEX.BackColor = Color.Pink;
             buttonEX.Cursor = Cursors.Hand;
             buttonEX.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
-            buttonEX.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonEX.Location = new Point(11, 12);
+            buttonEX.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEX.Location = new Point(8, 7);
+            buttonEX.Margin = new Padding(2, 2, 2, 2);
             buttonEX.Name = "buttonEX";
-            buttonEX.Size = new Size(34, 34);
+            buttonEX.Size = new Size(24, 20);
             buttonEX.TabIndex = 2;
             buttonEX.Text = "X";
             buttonEX.UseVisualStyleBackColor = false;
@@ -79,11 +82,12 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Lucida Fax", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Cornsilk;
-            label2.Location = new Point(423, 228);
+            label2.Location = new Point(296, 137);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(219, 37);
+            label2.Size = new Size(129, 26);
             label2.TabIndex = 4;
             label2.Text = "List of items";
             // 
@@ -91,21 +95,23 @@
             // 
             dataGridView2.BackgroundColor = Color.MistyRose;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(12, 268);
+            dataGridView2.Location = new Point(8, 161);
+            dataGridView2.Margin = new Padding(2, 2, 2, 2);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 62;
             dataGridView2.RowTemplate.Height = 33;
-            dataGridView2.Size = new Size(1075, 149);
+            dataGridView2.Size = new Size(752, 89);
             dataGridView2.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Lucida Fax", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Cornsilk;
-            label3.Location = new Point(449, 429);
+            label3.Location = new Point(314, 257);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(154, 37);
+            label3.Size = new Size(97, 26);
             label3.TabIndex = 6;
             label3.Text = "Receipts";
             // 
@@ -113,19 +119,20 @@
             // 
             dataGridView3.BackgroundColor = Color.MistyRose;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(11, 469);
+            dataGridView3.Location = new Point(8, 281);
+            dataGridView3.Margin = new Padding(2, 2, 2, 2);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 62;
             dataGridView3.RowTemplate.Height = 33;
-            dataGridView3.Size = new Size(1075, 149);
+            dataGridView3.Size = new Size(752, 89);
             dataGridView3.TabIndex = 5;
             // 
             // ClientsTable
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
-            ClientSize = new Size(1098, 630);
+            ClientSize = new Size(769, 378);
             Controls.Add(label3);
             Controls.Add(dataGridView3);
             Controls.Add(label2);
@@ -133,6 +140,7 @@
             Controls.Add(buttonEX);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "ClientsTable";
             Text = "ClientsTable";
             Load += ClientsTable_Load;

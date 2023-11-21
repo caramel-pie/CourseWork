@@ -1,4 +1,5 @@
-﻿namespace Year2_Lab1
+﻿
+namespace Year2_Lab1
 {
     partial class AddClient
     {
