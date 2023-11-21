@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Xml.Linq;
-using Year2_Lab1.Models;
+﻿using System.Text.RegularExpressions;
+using PdfSharp.Pdf;
+using PdfSharp;
+using TheArtOfDev.HtmlRenderer.Core.Entities;
+using TheArtOfDev.HtmlRenderer.PdfSharp;
 
 namespace Year2_Lab1
 {
@@ -31,7 +27,8 @@ namespace Year2_Lab1
             fileContent = Regex.Replace(fileContent, "'startdate'", receipt.startdate.ToString());
             fileContent = Regex.Replace(fileContent, "'finishdate'", receipt.finishdate.ToString());
             fileContent = Regex.Replace(fileContent, "'sum'", receipt.sum.ToString());
-            File.WriteAllText($"Receipt{receipt.id}.html", fileContent);
+            PdfDocument pdf = PdfGenerator.GeneratePdf(fileContent, PageSize.A4);
+            pdf.Save("document.pdf");
         }
     }
 }
