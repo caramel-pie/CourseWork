@@ -230,6 +230,14 @@ namespace Year2_Lab1
             }
             return materials;
         }
+        public List<String> GetConditions()
+        {
+            List<String> conditions = new List<String>();
+            conditions.Add("New");
+            conditions.Add("Used");
+            conditions.Add("To repair");
+            return conditions;
+        }
         public DataSet ClientsItems(uint id)
         {
             MySqlCommand cmd = new MySqlCommand("SELECT `items`.`id`, `title` from `items` INNER JOIN `receipt` on `items`.`id` = `receipt`.`itemid` WHERE `receipt`.`clientid` = @ci", this.GetConnection());

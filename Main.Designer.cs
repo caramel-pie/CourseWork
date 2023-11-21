@@ -42,6 +42,7 @@
             clientsButton = new Button();
             itemsButton = new Button();
             SQLbutton = new Button();
+            button1 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -169,7 +170,7 @@
             SQLbutton.Cursor = Cursors.Hand;
             SQLbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
             SQLbutton.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            SQLbutton.Location = new Point(265, 278);
+            SQLbutton.Location = new Point(265, 315);
             SQLbutton.Name = "SQLbutton";
             SQLbutton.Size = new Size(319, 34);
             SQLbutton.TabIndex = 3;
@@ -177,12 +178,23 @@
             SQLbutton.UseVisualStyleBackColor = true;
             SQLbutton.Click += SQLbutton_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(433, 279);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 4;
+            button1.Text = "Filter";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(878, 544);
+            Controls.Add(button1);
             Controls.Add(SQLbutton);
             Controls.Add(itemsButton);
             Controls.Add(clientsButton);
@@ -214,5 +226,6 @@
         private Button SQLbutton;
         private ToolStripMenuItem showItemProfileToolStripMenuItem;
         private ToolStripMenuItem showClientProfileToolStripMenuItem;
+        private Button button1;
     }
 }

@@ -29,3 +29,4 @@ C:\Users\coffe\OneDrive\Рабочий стол\С# course\Year2_Lab1\Year2_Lab1
 C:\Users\coffe\OneDrive\Рабочий стол\С# course\Year2_Lab1\Year2_Lab1\obj\Debug\net6.0-windows\Year2_Lab1.ItemProfile.resources
 C:\Users\coffe\OneDrive\Рабочий стол\С# course\Year2_Lab1\Year2_Lab1\obj\Debug\net6.0-windows\Year2_Lab1.Queries.resources
 C:\Users\coffe\OneDrive\Рабочий стол\С# course\Year2_Lab1\Year2_Lab1\obj\Debug\net6.0-windows\Year2_Lab1.ClientProfile.resources
+C:\Users\coffe\OneDrive\Рабочий стол\С# course\Year2_Lab1\Year2_Lab1\obj\Debug\net6.0-windows\Year2_Lab1.Filtration.resources

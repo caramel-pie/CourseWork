@@ -25,6 +25,9 @@
     <Compile Update="EditItem.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Filtration.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ItemProfile.cs">
       <SubType>Form</SubType>
     </Compile>
