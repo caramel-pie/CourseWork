@@ -7,23 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Year2_Lab1.Utils;
 
 namespace Year2_Lab1
 {
-    public partial class ItemsTable : Form
+    public partial class DeleteItem : Form
     {
-        public ItemsTable()
+        public DeleteItem()
         {
             InitializeComponent();
         }
 
-        private void ItemsTable_Load(object sender, EventArgs e)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DataBase.getInstance.LoadItemDataset().Tables[0];
-        }
-
-        private void buttonEX_Click(object sender, EventArgs e)
-        {
+            if (DataBase.getInstance.DeleteItem(Int32.Parse(numBox.Text)) == 1)
+                MessageBox.Show("Success");
+            else
+                MessageBox.Show("Error");
             this.Close();
         }
     }

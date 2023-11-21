@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Year2_Lab1.Utils;
 
 namespace Year2_Lab1
 {

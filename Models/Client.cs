@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Year2_Lab1
+namespace Year2_Lab1.Models
 {
     internal class Client
     {
@@ -33,7 +33,7 @@ namespace Year2_Lab1
         }
         public override string ToString()
         {
-            return String.Format("{0} {1}", this.name, this.surname);
+            return string.Format("{0} {1}", name, surname);
         }
     }
 }
