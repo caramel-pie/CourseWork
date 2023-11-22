@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Views\Clients\AddClient.cs">
+    <Compile Update="Filtration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Items\AddItem.cs">
+    <Compile Update="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Clients\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Clients\ClientProfile.cs">
@@ -16,29 +19,22 @@
     <Compile Update="Views\Clients\DeleteClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Items\DeleteItem.cs">
+    <Compile Update="Views\Clients\EditClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\Clients\EditClient.cs">
+    <Compile Update="Views\Items\AddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Items\DeleteItem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Items\EditItem.cs">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Update="Filtration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="ItemProfile.cs">
-=======
     <Compile Update="Views\Items\ItemProfile.cs">
->>>>>>> dev
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Items\ItemsTable.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\Queries.cs">
