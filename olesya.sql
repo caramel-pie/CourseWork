@@ -35,6 +35,7 @@ CREATE TABLE `items` (
   `condition` varchar(12) NOT NULL,
   `pledget` int(7) UNSIGNED NOT NULL,
   `material_id` int(10) UNSIGNED NOT NULL,
+  `departments_id` int(10) UNSIGNED NOT NULL,
   `id` int(10) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -52,6 +53,8 @@ CREATE TABLE `clients` (
   `adress` text NOT NULL,
   `doctype` varchar(30) NOT NULL,
   `docnum` int(12) UNSIGNED NOT NULL,
+  `telephone` varchar(13) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `id` int(10) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -75,3 +78,6 @@ ADD CONSTRAINT `fk_worker_position` FOREIGN KEY (`position_id`) REFERENCES `posi
 
 ALTER TABLE `items`
 ADD CONSTRAINT `fk_item_material` FOREIGN KEY (`material_id`) REFERENCES `materials` (`id`);
+
+ALTER TABLE `items`
+ADD CONSTRAINT `fk_item_department` FOREIGN KEY (`department_id`) REFERENCES `departments` (`id`);
