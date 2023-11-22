@@ -31,15 +31,15 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            matBox = new ListBox();
             label4 = new Label();
             label5 = new Label();
             minpled = new TextBox();
             maxpled = new TextBox();
             label6 = new Label();
-            conBox = new ListBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            matBox = new CheckedListBox();
+            conBox = new CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,7 +55,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(37, 211);
+            label2.Location = new Point(37, 98);
             label2.Name = "label2";
             label2.Size = new Size(81, 25);
             label2.TabIndex = 1;
@@ -64,21 +64,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 256);
+            label3.Location = new Point(37, 132);
             label3.Name = "label3";
             label3.Size = new Size(79, 25);
             label3.TabIndex = 2;
             label3.Text = "Material:";
-            // 
-            // matBox
-            // 
-            matBox.FormattingEnabled = true;
-            matBox.ItemHeight = 25;
-            matBox.Location = new Point(37, 296);
-            matBox.Name = "matBox";
-            matBox.SelectionMode = SelectionMode.MultiSimple;
-            matBox.Size = new Size(180, 29);
-            matBox.TabIndex = 35;
             // 
             // label4
             // 
@@ -115,21 +105,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(37, 338);
+            label6.Location = new Point(37, 281);
             label6.Name = "label6";
             label6.Size = new Size(94, 25);
             label6.TabIndex = 40;
             label6.Text = "Condition:";
-            // 
-            // conBox
-            // 
-            conBox.FormattingEnabled = true;
-            conBox.ItemHeight = 25;
-            conBox.Location = new Point(37, 366);
-            conBox.Name = "conBox";
-            conBox.SelectionMode = SelectionMode.MultiSimple;
-            conBox.Size = new Size(180, 29);
-            conBox.TabIndex = 41;
             // 
             // button1
             // 
@@ -151,20 +131,36 @@
             dataGridView1.Size = new Size(599, 344);
             dataGridView1.TabIndex = 43;
             // 
+            // matBox
+            // 
+            matBox.FormattingEnabled = true;
+            matBox.Location = new Point(37, 160);
+            matBox.Name = "matBox";
+            matBox.Size = new Size(180, 116);
+            matBox.TabIndex = 46;
+            // 
+            // conBox
+            // 
+            conBox.FormattingEnabled = true;
+            conBox.Location = new Point(37, 313);
+            conBox.Name = "conBox";
+            conBox.Size = new Size(180, 88);
+            conBox.TabIndex = 47;
+            // 
             // Filtration
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 634);
+            Controls.Add(conBox);
+            Controls.Add(matBox);
             Controls.Add(dataGridView1);
             Controls.Add(button1);
-            Controls.Add(conBox);
             Controls.Add(label6);
             Controls.Add(maxpled);
             Controls.Add(minpled);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(matBox);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -182,14 +178,14 @@
         private Label label2;
         private Label label3;
         private ComboBox typeBox;
-        private ListBox matBox;
         private Label label4;
         private Label label5;
         private TextBox minpled;
         private TextBox maxpled;
         private Label label6;
-        private ListBox conBox;
         private Button button1;
         private DataGridView dataGridView1;
+        private CheckedListBox matBox;
+        private CheckedListBox conBox;
     }
 }

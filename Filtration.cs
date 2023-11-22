@@ -19,7 +19,37 @@ namespace Year2_Lab1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var matquery = new List<string>();
+            var query = new List<string>();
 
+            foreach (var material in matBox.CheckedItems)
+            {
+                matquery.Add((material as string).Split(" ")[0]);
+            }
+            if (matquery.Count > 0)
+            {
+                query.Add($"`material_id` IN ('{String.Join("' , '", matquery)}')");
+            }
+            var conquery = new List<string>();
+            foreach (var condition in conBox.CheckedItems)
+            {
+                conquery.Add(condition as string);
+            }
+            if (conquery.Count > 0)
+            {
+                query.Add($"`condition` IN ('{String.Join("' , '", conquery)}')");
+            }
+            if (minpled.Text.Length > 0)
+            {
+                query.Add($"`pledget`>{minpled.Text}");
+            }
+            if (maxpled.Text.Length > 0)
+            {
+                query.Add($"`pledget`<{maxpled.Text}");
+            }
+            MessageBox.Show(String.Join(" AND ", query));
+            var data = DataBase.getInstance.QueriesDataset($"SELECT * FROM `items` WHERE {String.Join(" AND ", query)}");
+            dataGridView1.DataSource = data.Tables[0];
         }
 
         private void Filtration_Load(object sender, EventArgs e)
