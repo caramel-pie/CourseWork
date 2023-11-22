@@ -65,5 +65,10 @@ namespace Year2_Lab1
                 conBox.Items.Add(condition.ToString());
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = DataBase.getInstance.QueriesDataset($"SELECT * FROM `items` WHERE `title` LIKE '%{textBox.Text}%' OR `id`={textBox.Text}").Tables[0];
+        }
     }
 }

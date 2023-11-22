@@ -40,7 +40,11 @@
             dataGridView1 = new DataGridView();
             matBox = new CheckedListBox();
             conBox = new CheckedListBox();
+            dataGridView2 = new DataGridView();
+            textBox = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -55,7 +59,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(37, 98);
+            label2.Location = new Point(37, 164);
             label2.Name = "label2";
             label2.Size = new Size(81, 25);
             label2.TabIndex = 1;
@@ -64,7 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(37, 132);
+            label3.Location = new Point(37, 200);
             label3.Name = "label3";
             label3.Size = new Size(79, 25);
             label3.TabIndex = 2;
@@ -73,7 +77,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(37, 416);
+            label4.Location = new Point(37, 447);
             label4.Name = "label4";
             label4.Size = new Size(145, 25);
             label4.TabIndex = 36;
@@ -82,7 +86,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(37, 489);
+            label5.Location = new Point(37, 520);
             label5.Name = "label5";
             label5.Size = new Size(148, 25);
             label5.TabIndex = 37;
@@ -90,22 +94,22 @@
             // 
             // minpled
             // 
-            minpled.Location = new Point(37, 444);
+            minpled.Location = new Point(37, 475);
             minpled.Name = "minpled";
-            minpled.Size = new Size(150, 31);
+            minpled.Size = new Size(180, 31);
             minpled.TabIndex = 38;
             // 
             // maxpled
             // 
-            maxpled.Location = new Point(37, 517);
+            maxpled.Location = new Point(37, 548);
             maxpled.Name = "maxpled";
-            maxpled.Size = new Size(150, 31);
+            maxpled.Size = new Size(180, 31);
             maxpled.TabIndex = 39;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(37, 281);
+            label6.Location = new Point(37, 319);
             label6.Name = "label6";
             label6.Size = new Size(94, 25);
             label6.TabIndex = 40;
@@ -113,7 +117,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(54, 566);
+            button1.Location = new Point(73, 585);
             button1.Name = "button1";
             button1.Size = new Size(112, 34);
             button1.TabIndex = 42;
@@ -124,34 +128,64 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(288, 256);
+            dataGridView1.Location = new Point(288, 228);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(599, 344);
+            dataGridView1.Size = new Size(599, 372);
             dataGridView1.TabIndex = 43;
             // 
             // matBox
             // 
             matBox.FormattingEnabled = true;
-            matBox.Location = new Point(37, 160);
+            matBox.Location = new Point(37, 228);
             matBox.Name = "matBox";
-            matBox.Size = new Size(180, 116);
+            matBox.Size = new Size(180, 88);
             matBox.TabIndex = 46;
             // 
             // conBox
             // 
             conBox.FormattingEnabled = true;
-            conBox.Location = new Point(37, 313);
+            conBox.Location = new Point(37, 347);
             conBox.Name = "conBox";
             conBox.Size = new Size(180, 88);
             conBox.TabIndex = 47;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(288, 35);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 62;
+            dataGridView2.RowTemplate.Height = 33;
+            dataGridView2.Size = new Size(599, 112);
+            dataGridView2.TabIndex = 48;
+            // 
+            // textBox
+            // 
+            textBox.Location = new Point(37, 68);
+            textBox.Name = "textBox";
+            textBox.Size = new Size(180, 31);
+            textBox.TabIndex = 49;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(73, 113);
+            button2.Name = "button2";
+            button2.Size = new Size(112, 34);
+            button2.TabIndex = 50;
+            button2.Text = "Search";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Filtration
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 634);
+            Controls.Add(button2);
+            Controls.Add(textBox);
+            Controls.Add(dataGridView2);
             Controls.Add(conBox);
             Controls.Add(matBox);
             Controls.Add(dataGridView1);
@@ -168,6 +202,7 @@
             Text = "Filtration";
             Load += Filtration_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +222,8 @@
         private DataGridView dataGridView1;
         private CheckedListBox matBox;
         private CheckedListBox conBox;
+        private DataGridView dataGridView2;
+        private TextBox textBox;
+        private Button button2;
     }
 }
