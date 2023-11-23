@@ -15,8 +15,10 @@ namespace Year2_Lab1.Models
         public int docnum { get; set; }
         public string adress { get; set; }
         public int id { get; set; }
-        //public List<Item> items { get; set; }
-        public Client(string name, string surname, int age, string doctype, int docnum, string adress, int id)
+        public int telephone { get; set; }
+        public string email { get; set; }
+        
+        public Client(string name, string surname, int age, string doctype, int docnum, string adress, int id, int telephone, string email)
         {
             this.name = name;
             this.surname = surname;
@@ -25,11 +27,12 @@ namespace Year2_Lab1.Models
             this.docnum = docnum;
             this.adress = adress;
             this.id = id;
-            //this.items = new List<Item>();
+            this.email = email; 
+            this.telephone = telephone;
         }
         public static Client getEmpty
         {
-            get { return new Client("", "", 0, "", 0, "", 0); }
+            get { return new Client("", "", 0, "", 0, "", 0, 0, ""); }
         }
         public override string ToString()
         {

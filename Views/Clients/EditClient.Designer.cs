@@ -43,6 +43,10 @@
             idBox = new TextBox();
             label1 = new Label();
             ageBar = new NumericUpDown();
+            emailBox = new TextBox();
+            label2 = new Label();
+            phoneBox = new TextBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)ageBar).BeginInit();
             SuspendLayout();
             // 
@@ -51,7 +55,7 @@
             buttonSave.Cursor = Cursors.Hand;
             buttonSave.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
             buttonSave.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSave.Location = new Point(235, 607);
+            buttonSave.Location = new Point(239, 586);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(112, 34);
             buttonSave.TabIndex = 25;
@@ -62,33 +66,33 @@
             // numBox
             // 
             numBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            numBox.Location = new Point(209, 461);
+            numBox.Location = new Point(179, 342);
             numBox.Name = "numBox";
-            numBox.Size = new Size(167, 31);
+            numBox.Size = new Size(236, 31);
             numBox.TabIndex = 24;
             // 
             // adressBox
             // 
             adressBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            adressBox.Location = new Point(209, 297);
+            adressBox.Location = new Point(179, 228);
             adressBox.Name = "adressBox";
-            adressBox.Size = new Size(167, 31);
+            adressBox.Size = new Size(236, 31);
             adressBox.TabIndex = 23;
             // 
             // surnameBox
             // 
             surnameBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            surnameBox.Location = new Point(209, 127);
+            surnameBox.Location = new Point(175, 108);
             surnameBox.Name = "surnameBox";
-            surnameBox.Size = new Size(167, 31);
+            surnameBox.Size = new Size(236, 31);
             surnameBox.TabIndex = 22;
             // 
             // nameBox
             // 
             nameBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            nameBox.Location = new Point(209, 48);
+            nameBox.Location = new Point(179, 48);
             nameBox.Name = "nameBox";
-            nameBox.Size = new Size(167, 31);
+            nameBox.Size = new Size(236, 31);
             nameBox.TabIndex = 21;
             // 
             // docBox
@@ -97,16 +101,16 @@
             docBox.FormattingEnabled = true;
             docBox.ItemHeight = 21;
             docBox.Items.AddRange(new object[] { "Passport", "Driver license", "Inter-passport", "Indentif-code" });
-            docBox.Location = new Point(209, 381);
+            docBox.Location = new Point(179, 288);
             docBox.Name = "docBox";
-            docBox.Size = new Size(167, 25);
+            docBox.Size = new Size(236, 25);
             docBox.TabIndex = 20;
             // 
             // labelNum
             // 
             labelNum.AutoSize = true;
             labelNum.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelNum.Location = new Point(197, 435);
+            labelNum.Location = new Point(202, 316);
             labelNum.Name = "labelNum";
             labelNum.Size = new Size(191, 23);
             labelNum.TabIndex = 19;
@@ -116,7 +120,7 @@
             // 
             labelDoc.AutoSize = true;
             labelDoc.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelDoc.Location = new Point(177, 355);
+            labelDoc.Location = new Point(179, 262);
             labelDoc.Name = "labelDoc";
             labelDoc.Size = new Size(236, 23);
             labelDoc.TabIndex = 18;
@@ -126,7 +130,7 @@
             // 
             labelAdress.AutoSize = true;
             labelAdress.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelAdress.Location = new Point(202, 271);
+            labelAdress.Location = new Point(202, 202);
             labelAdress.Name = "labelAdress";
             labelAdress.Size = new Size(179, 23);
             labelAdress.TabIndex = 17;
@@ -136,7 +140,7 @@
             // 
             labelAge.AutoSize = true;
             labelAge.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelAge.Location = new Point(216, 185);
+            labelAge.Location = new Point(216, 142);
             labelAge.Name = "labelAge";
             labelAge.Size = new Size(147, 23);
             labelAge.TabIndex = 16;
@@ -146,7 +150,7 @@
             // 
             labelSurname.AutoSize = true;
             labelSurname.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelSurname.Location = new Point(197, 101);
+            labelSurname.Location = new Point(193, 82);
             labelSurname.Name = "labelSurname";
             labelSurname.Size = new Size(200, 23);
             labelSurname.TabIndex = 15;
@@ -165,16 +169,16 @@
             // idBox
             // 
             idBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            idBox.Location = new Point(209, 546);
+            idBox.Location = new Point(179, 522);
             idBox.Name = "idBox";
-            idBox.Size = new Size(172, 31);
+            idBox.Size = new Size(236, 31);
             idBox.TabIndex = 28;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(224, 520);
+            label1.Location = new Point(227, 496);
             label1.Name = "label1";
             label1.Size = new Size(136, 23);
             label1.TabIndex = 27;
@@ -182,20 +186,62 @@
             // 
             // ageBar
             // 
-            ageBar.Location = new Point(209, 211);
+            ageBar.Location = new Point(179, 168);
             ageBar.Maximum = new decimal(new int[] { 82, 0, 0, 0 });
             ageBar.Minimum = new decimal(new int[] { 18, 0, 0, 0 });
             ageBar.Name = "ageBar";
-            ageBar.Size = new Size(167, 31);
+            ageBar.Size = new Size(236, 31);
             ageBar.TabIndex = 29;
             ageBar.Value = new decimal(new int[] { 18, 0, 0, 0 });
+            // 
+            // emailBox
+            // 
+            emailBox.Location = new Point(175, 462);
+            emailBox.MaxLength = 50;
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(240, 31);
+            emailBox.TabIndex = 33;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(209, 436);
+            label2.Name = "label2";
+            label2.Size = new Size(168, 23);
+            label2.TabIndex = 32;
+            label2.Text = "Enter the email:";
+            // 
+            // phoneBox
+            // 
+            phoneBox.Location = new Point(175, 402);
+            phoneBox.MaxLength = 13;
+            phoneBox.Name = "phoneBox";
+            phoneBox.Size = new Size(240, 31);
+            phoneBox.TabIndex = 31;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = SystemColors.ActiveCaptionText;
+            label3.Location = new Point(209, 376);
+            label3.Name = "label3";
+            label3.Size = new Size(176, 23);
+            label3.TabIndex = 30;
+            label3.Text = "Enter the phone:";
             // 
             // EditClient
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
-            ClientSize = new Size(571, 670);
+            ClientSize = new Size(571, 644);
+            Controls.Add(emailBox);
+            Controls.Add(label2);
+            Controls.Add(phoneBox);
+            Controls.Add(label3);
             Controls.Add(ageBar);
             Controls.Add(idBox);
             Controls.Add(label1);
@@ -234,5 +280,9 @@
         private TextBox idBox;
         private Label label1;
         private NumericUpDown ageBar;
+        private TextBox emailBox;
+        private Label label2;
+        private TextBox phoneBox;
+        private Label label3;
     }
 }

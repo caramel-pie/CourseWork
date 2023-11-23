@@ -19,7 +19,15 @@ namespace Year2_Lab1
 
         private void buttonSQL_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DataBase.getInstance.QueriesDataset(SQLBox.Text).Tables[0];
+            try
+            {
+                dataGridView1.DataSource = DataBase.getInstance.QueriesDataset(SQLBox.Text).Tables[0];
+            }
+            catch
+            {
+                MessageBox.Show("The query is successful");
+            }
+            
         }
 
         private void buttonEX_Click(object sender, EventArgs e)

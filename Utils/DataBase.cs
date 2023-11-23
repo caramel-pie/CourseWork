@@ -60,22 +60,25 @@ namespace Year2_Lab1
         }
         public int CreateClient(Client client)
         {
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `clients` (`name`, `surname`, `age`, `doctype`, `docnum`, `adress`) VALUES(@n, @s, @age, @dt, @dn, @a)", this.GetConnection());
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `clients` (`name`, `surname`, `age`, `doctype`, `docnum`, `adress`, `telephone`, `email`) VALUES(@n, @s, @age, @dt, @dn, @a, @tel, @em)", this.GetConnection());
             cmd.Parameters.Add("@n", MySqlDbType.VarChar).Value = client.name;
             cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = client.surname;
             cmd.Parameters.Add("@age", MySqlDbType.Int64).Value = client.age;
             cmd.Parameters.Add("@dt", MySqlDbType.VarChar).Value = client.doctype;
             cmd.Parameters.Add("@dn", MySqlDbType.Int64).Value = client.docnum;
             cmd.Parameters.Add("@a", MySqlDbType.VarChar).Value = client.adress;
+            cmd.Parameters.Add("@tel", MySqlDbType.Int64).Value = client.telephone;
+            cmd.Parameters.Add("@em", MySqlDbType.VarChar).Value = client.email;
             return cmd.ExecuteNonQuery();
         }
         public int CreateItem(Item item, int oid, Receipt receipt)
         {
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `items` (`material_id`, `title`, `pledget`, `condition`, type) VALUES(@t, @ti, @pg, @con, ''); SELECT LAST_INSERT_ID();", this.GetConnection());
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `items` (`material_id`, `title`, `pledget`, `condition`, `department_id`) VALUES(@t, @ti, @pg, @con, @dep); SELECT LAST_INSERT_ID();", this.GetConnection());
             cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = item.material_id;
             cmd.Parameters.Add("@ti", MySqlDbType.VarChar).Value = item.title;
             cmd.Parameters.Add("@pg", MySqlDbType.Int64).Value = item.pledget;
             cmd.Parameters.Add("@con", MySqlDbType.VarChar).Value = item.condition;
+            cmd.Parameters.Add("@dep", MySqlDbType.Int64).Value = 1;
 
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
@@ -114,24 +117,27 @@ namespace Year2_Lab1
         }
         public int UpdateClientData(Client client)
         {
-            MySqlCommand cmd = new MySqlCommand("UPDATE `clients` SET `name`=@n,`surname`=@s,`age`=@a,`doctype`=@dt,`docnum`=@dn,`adress`=@ad WHERE `id`=@id", this.GetConnection());
+            MySqlCommand cmd = new MySqlCommand("UPDATE `clients` SET `name`=@n,`surname`=@s,`age`=@a,`doctype`=@dt,`docnum`=@dn,`adress`=@ad, `telephone`=@tel, `email`=@em WHERE `id`=@id", this.GetConnection());
             cmd.Parameters.Add("@n", MySqlDbType.VarChar).Value = client.name;
             cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = client.surname;
             cmd.Parameters.Add("@a", MySqlDbType.Int64).Value = client.age;
             cmd.Parameters.Add("@dt", MySqlDbType.VarChar).Value = client.doctype;
             cmd.Parameters.Add("@dn", MySqlDbType.Int64).Value = client.docnum;
             cmd.Parameters.Add("@ad", MySqlDbType.VarChar).Value = client.adress;
+            cmd.Parameters.Add("@tel", MySqlDbType.Int64).Value = client.telephone;
+            cmd.Parameters.Add("@em", MySqlDbType.VarChar).Value = client.email;
             cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = client.id;
             return cmd.ExecuteNonQuery();
         }
         public int UpdateItemData(Item item, Receipt receipt, int oid)
         {
-            MySqlCommand cmd = new MySqlCommand("UPDATE `items` SET `material_id`=@n,`title`=@t,`pledget`=@a,`condition`=@con WHERE `id`=@id", this.GetConnection());
+            MySqlCommand cmd = new MySqlCommand("UPDATE `items` SET `material_id`=@n,`title`=@t,`pledget`=@a,`condition`=@con, `department_id`=@dep WHERE `id`=@id", this.GetConnection());
             cmd.Parameters.Add("@n", MySqlDbType.VarChar).Value = item.material_id;
             cmd.Parameters.Add("@t", MySqlDbType.VarChar).Value = item.title;
             cmd.Parameters.Add("@a", MySqlDbType.Int64).Value = item.pledget;
             cmd.Parameters.Add("@con", MySqlDbType.VarChar).Value = item.condition;
             cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = item.id;
+            cmd.Parameters.Add("@dep", MySqlDbType.Int64).Value = 1;
             cmd.ExecuteNonQuery();
 
             MySqlCommand cmd2 = new MySqlCommand("UPDATE `receipt` SET `finishdate`=@fd,`sum`=@s,`clientid`=@ci WHERE `itemid`=@ii", this.GetConnection());

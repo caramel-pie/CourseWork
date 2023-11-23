@@ -28,7 +28,7 @@ namespace Year2_Lab1
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Client client = new Client(nameBox.Text, surnameBox.Text, 0, docBox.Text, int.Parse(numBox.Text.ToString()), adressBox.Text, 0);
+            Client client = new Client(nameBox.Text, surnameBox.Text, 0, docBox.Text, int.Parse(numBox.Text.ToString()), adressBox.Text, 0, int.Parse(phoneBox.Text.ToString()), emailBox.Text);
             int age;
             bool isValidAge = int.TryParse(ageBar.Text, out age);
             client.age = age;

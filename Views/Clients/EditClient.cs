@@ -27,7 +27,7 @@ namespace Year2_Lab1
 
             if (corrName && corrSur && isValidAge)
             {
-                Client client = new Client(nameBox.Text, surnameBox.Text, age, docBox.Text, int.Parse(numBox.Text), adressBox.Text, int.Parse(idBox.Text));
+                Client client = new Client(nameBox.Text, surnameBox.Text, age, docBox.Text, int.Parse(numBox.Text), adressBox.Text, int.Parse(idBox.Text), int.Parse(phoneBox.Text.ToString()), emailBox.Text);
                 if (DataBase.getInstance.UpdateClientData(client) == 1)
                 {
                     this.Close();
