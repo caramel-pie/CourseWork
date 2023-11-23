@@ -43,6 +43,7 @@
             dateTimePicker1 = new DateTimePicker();
             label3 = new Label();
             typeBox = new ComboBox();
+            buttonEX = new Button();
             SuspendLayout();
             // 
             // condBox
@@ -51,9 +52,9 @@
             condBox.FormattingEnabled = true;
             condBox.ItemHeight = 21;
             condBox.Items.AddRange(new object[] { "New", "Used", "To repair" });
-            condBox.Location = new Point(165, 218);
+            condBox.Location = new Point(115, 218);
             condBox.Name = "condBox";
-            condBox.Size = new Size(182, 25);
+            condBox.Size = new Size(300, 25);
             condBox.TabIndex = 39;
             // 
             // buttonSave
@@ -72,18 +73,18 @@
             // pledgetBox
             // 
             pledgetBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            pledgetBox.Location = new Point(168, 297);
+            pledgetBox.Location = new Point(115, 297);
             pledgetBox.MaxLength = 7;
             pledgetBox.Name = "pledgetBox";
-            pledgetBox.Size = new Size(179, 31);
+            pledgetBox.Size = new Size(300, 31);
             pledgetBox.TabIndex = 36;
             // 
             // titleBox
             // 
             titleBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            titleBox.Location = new Point(168, 133);
+            titleBox.Location = new Point(115, 133);
             titleBox.Name = "titleBox";
-            titleBox.Size = new Size(179, 31);
+            titleBox.Size = new Size(300, 31);
             titleBox.TabIndex = 35;
             // 
             // labelAdress
@@ -129,9 +130,9 @@
             // Boxid
             // 
             Boxid.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            Boxid.Location = new Point(168, 378);
+            Boxid.Location = new Point(115, 378);
             Boxid.Name = "Boxid";
-            Boxid.Size = new Size(179, 31);
+            Boxid.Size = new Size(300, 31);
             Boxid.TabIndex = 43;
             // 
             // label2
@@ -147,9 +148,9 @@
             // owBox
             // 
             owBox.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            owBox.Location = new Point(168, 456);
+            owBox.Location = new Point(115, 456);
             owBox.Name = "owBox";
-            owBox.Size = new Size(179, 31);
+            owBox.Size = new Size(300, 31);
             owBox.TabIndex = 47;
             // 
             // label1
@@ -184,10 +185,24 @@
             // typeBox
             // 
             typeBox.FormattingEnabled = true;
-            typeBox.Location = new Point(165, 56);
+            typeBox.Location = new Point(115, 56);
             typeBox.Name = "typeBox";
-            typeBox.Size = new Size(182, 33);
+            typeBox.Size = new Size(300, 33);
             typeBox.TabIndex = 50;
+            // 
+            // buttonEX
+            // 
+            buttonEX.BackColor = Color.Pink;
+            buttonEX.Cursor = Cursors.Hand;
+            buttonEX.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
+            buttonEX.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEX.Location = new Point(12, 12);
+            buttonEX.Name = "buttonEX";
+            buttonEX.Size = new Size(34, 34);
+            buttonEX.TabIndex = 62;
+            buttonEX.Text = "X";
+            buttonEX.UseVisualStyleBackColor = false;
+            buttonEX.Click += buttonEX_Click;
             // 
             // EditItem
             // 
@@ -195,6 +210,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(505, 637);
+            Controls.Add(buttonEX);
             Controls.Add(typeBox);
             Controls.Add(dateTimePicker1);
             Controls.Add(label3);
@@ -233,5 +249,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label3;
         private ComboBox typeBox;
+        private Button buttonEX;
     }
 }

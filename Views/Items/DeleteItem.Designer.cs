@@ -31,6 +31,7 @@
             buttonSave = new Button();
             numBox = new TextBox();
             labelNum = new Label();
+            buttonEX = new Button();
             SuspendLayout();
             // 
             // buttonSave
@@ -63,12 +64,27 @@
             labelNum.TabIndex = 29;
             labelNum.Text = "Enter the ID:";
             // 
+            // buttonEX
+            // 
+            buttonEX.BackColor = Color.Pink;
+            buttonEX.Cursor = Cursors.Hand;
+            buttonEX.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
+            buttonEX.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEX.Location = new Point(12, 12);
+            buttonEX.Name = "buttonEX";
+            buttonEX.Size = new Size(34, 34);
+            buttonEX.TabIndex = 62;
+            buttonEX.Text = "X";
+            buttonEX.UseVisualStyleBackColor = false;
+            buttonEX.Click += buttonEX_Click;
+            // 
             // DeleteItem
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(450, 450);
+            Controls.Add(buttonEX);
             Controls.Add(labelNum);
             Controls.Add(buttonSave);
             Controls.Add(numBox);
@@ -83,5 +99,6 @@
         private Button buttonSave;
         private TextBox numBox;
         private Label labelNum;
+        private Button buttonEX;
     }
 }

@@ -53,5 +53,10 @@ namespace Year2_Lab1
                 typeBox.Items.Add(material.ToString());
             }
         }
+
+        private void buttonEX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

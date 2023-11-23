@@ -41,6 +41,7 @@
             label2 = new Label();
             dateTimePicker1 = new DateTimePicker();
             typeBox = new ComboBox();
+            buttonEX = new Button();
             SuspendLayout();
             // 
             // buttonSave
@@ -166,12 +167,27 @@
             typeBox.Size = new Size(300, 33);
             typeBox.TabIndex = 33;
             // 
+            // buttonEX
+            // 
+            buttonEX.BackColor = Color.Pink;
+            buttonEX.Cursor = Cursors.Hand;
+            buttonEX.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
+            buttonEX.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEX.Location = new Point(12, 12);
+            buttonEX.Name = "buttonEX";
+            buttonEX.Size = new Size(34, 34);
+            buttonEX.TabIndex = 62;
+            buttonEX.Text = "X";
+            buttonEX.UseVisualStyleBackColor = false;
+            buttonEX.Click += buttonEX_Click;
+            // 
             // AddItem
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(543, 535);
+            Controls.Add(buttonEX);
             Controls.Add(typeBox);
             Controls.Add(dateTimePicker1);
             Controls.Add(label2);
@@ -210,5 +226,6 @@
         private ComboBox comboBox1;
         private Label label3;
         private ComboBox depBox;
+        private Button buttonEX;
     }
 }

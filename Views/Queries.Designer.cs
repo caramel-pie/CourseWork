@@ -41,7 +41,7 @@
             // 
             SQLBox.Location = new Point(12, 107);
             SQLBox.Name = "SQLBox";
-            SQLBox.Size = new Size(487, 31);
+            SQLBox.Size = new Size(776, 31);
             SQLBox.TabIndex = 0;
             // 
             // buttonSQL
@@ -105,7 +105,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 466);
             Controls.Add(buttonEX);
             Controls.Add(labelType);
             Controls.Add(label1);

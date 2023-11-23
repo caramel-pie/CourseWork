@@ -29,36 +29,6 @@ namespace Year2_Lab1
             new ItemsTable().Show();
         }
 
-        private void addClientToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new AddClient().Show();
-        }
-
-        private void addItemToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new AddItem().Show();
-        }
-
-        private void deleteClientToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new DeleteClient().Show();
-        }
-
-        private void deleteItemToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new DeleteItem().Show();
-        }
-
-        private void editClientToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new EditClient().Show();
-        }
-
-        private void editItemToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new EditItem().Show();
-        }
-
         private void SQLbutton_Click(object sender, EventArgs e)
         {
             new Queries().Show();
@@ -77,6 +47,46 @@ namespace Year2_Lab1
         private void button1_Click(object sender, EventArgs e)
         {
             new Filtration().Show();
+        }
+
+        private void clientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddClient().Show();
+        }
+
+        private void itemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddItem().Show();
+        }
+
+        private void clientToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new DeleteClient().Show();
+        }
+
+        private void itemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new DeleteItem().Show();
+        }
+
+        private void clientToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new EditClient().Show();
+        }
+
+        private void itemToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new EditItem().Show();
+        }
+
+        private void clientToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            new ClientProfile().Show();
+        }
+
+        private void itemToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            new ItemProfile().Show();
         }
     }
 }

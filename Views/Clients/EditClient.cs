@@ -38,5 +38,10 @@ namespace Year2_Lab1
             else
                 MessageBox.Show("Please, enter valid data.");
         }
+
+        private void buttonEX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

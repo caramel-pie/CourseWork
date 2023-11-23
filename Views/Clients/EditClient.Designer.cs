@@ -47,6 +47,7 @@
             label2 = new Label();
             phoneBox = new TextBox();
             label3 = new Label();
+            buttonEX = new Button();
             ((System.ComponentModel.ISupportInitialize)ageBar).BeginInit();
             SuspendLayout();
             // 
@@ -232,12 +233,27 @@
             label3.TabIndex = 30;
             label3.Text = "Enter the phone:";
             // 
+            // buttonEX
+            // 
+            buttonEX.BackColor = Color.Pink;
+            buttonEX.Cursor = Cursors.Hand;
+            buttonEX.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
+            buttonEX.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEX.Location = new Point(12, 11);
+            buttonEX.Name = "buttonEX";
+            buttonEX.Size = new Size(34, 34);
+            buttonEX.TabIndex = 62;
+            buttonEX.Text = "X";
+            buttonEX.UseVisualStyleBackColor = false;
+            buttonEX.Click += buttonEX_Click;
+            // 
             // EditClient
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(571, 644);
+            Controls.Add(buttonEX);
             Controls.Add(emailBox);
             Controls.Add(label2);
             Controls.Add(phoneBox);
@@ -284,5 +300,6 @@
         private Label label2;
         private TextBox phoneBox;
         private Label label3;
+        private Button buttonEX;
     }
 }

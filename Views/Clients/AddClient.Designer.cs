@@ -47,6 +47,7 @@ namespace Year2_Lab1
             label1 = new Label();
             emailBox = new TextBox();
             label2 = new Label();
+            buttonEX = new Button();
             ((System.ComponentModel.ISupportInitialize)ageBar).BeginInit();
             SuspendLayout();
             // 
@@ -226,12 +227,27 @@ namespace Year2_Lab1
             label2.TabIndex = 18;
             label2.Text = "Enter the email:";
             // 
+            // buttonEX
+            // 
+            buttonEX.BackColor = Color.Pink;
+            buttonEX.Cursor = Cursors.Hand;
+            buttonEX.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
+            buttonEX.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonEX.Location = new Point(12, 12);
+            buttonEX.Name = "buttonEX";
+            buttonEX.Size = new Size(34, 34);
+            buttonEX.TabIndex = 62;
+            buttonEX.Text = "X";
+            buttonEX.UseVisualStyleBackColor = false;
+            buttonEX.Click += buttonEX_Click;
+            // 
             // AddClient
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(527, 632);
+            Controls.Add(buttonEX);
             Controls.Add(emailBox);
             Controls.Add(label2);
             Controls.Add(phoneBox);
@@ -277,5 +293,6 @@ namespace Year2_Lab1
         private Label label1;
         private TextBox emailBox;
         private Label label2;
+        private Button buttonEX;
     }
 }

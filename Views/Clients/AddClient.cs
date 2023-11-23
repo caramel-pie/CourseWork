@@ -49,5 +49,10 @@ namespace Year2_Lab1
             this.Close();
             new AddItem().Show();
         }
+
+        private void buttonEX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

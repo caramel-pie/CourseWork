@@ -25,5 +25,10 @@ namespace Year2_Lab1
                 MessageBox.Show("Error");
             this.Close();
         }
+
+        private void buttonEX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

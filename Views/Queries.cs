@@ -27,7 +27,7 @@ namespace Year2_Lab1
             {
                 MessageBox.Show("The query is successful");
             }
-            
+
         }
 
         private void buttonEX_Click(object sender, EventArgs e)
