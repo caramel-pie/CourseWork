@@ -163,7 +163,25 @@ namespace Year2_Lab1
             item.title = row["title"].ToString();
             item.condition = row["condition"].ToString();
             item.pledget = int.Parse(row["pledget"].ToString());
+            item.department_id = (uint)row["department_id"];
             return item;
+        }
+        public Department GetDepartment(uint id)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `departments` WHERE `id`=@id", this.GetConnection());
+            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            Department department = Department.getEmpty;
+            if (dataTable.Rows.Count == 0)
+                return department;
+            DataRow row = dataTable.Rows[0];
+            department.opening_time = row["opening_time"].ToString();
+            department.closing_time = row["closing_time"].ToString();
+            department.adress = row["adress"].ToString();
+            department.id = id;
+            return department;
         }
         public Client GetClient(int id)
         {
@@ -229,6 +247,24 @@ namespace Year2_Lab1
             }
             return materials;
         }
+        public List<Department> DepartmentChoice()
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `departments`", this.GetConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            List<Department> departments = new List<Department>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Department department = Department.getEmpty;
+                department.opening_time = row["opening_time"].ToString();
+                department.closing_time = row["closing_time"].ToString();
+                department.adress = row["adress"].ToString();
+                department.id = (uint)row["id"];
+                departments.Add(department);
+            }
+            return departments;
+        }
         public List<String> GetConditions()
         {
             List<String> conditions = new List<String>();
@@ -246,5 +282,6 @@ namespace Year2_Lab1
             adapter.Fill(items);
             return items;
         }
+
     }
 }

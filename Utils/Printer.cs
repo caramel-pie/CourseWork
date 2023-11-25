@@ -12,6 +12,7 @@ namespace Year2_Lab1
         {
             var item = new DataBase().GetItem(receipt.itemid);
             var client = new DataBase().GetClient(receipt.clientid);
+            var department = new DataBase().GetDepartment(item.department_id);
 
             string fileContent = @"<!DOCTYPE html>
 <html lang=""en"">
@@ -44,6 +45,7 @@ namespace Year2_Lab1
         <div>
             <p>Delivery date: 'startdate'</p>
             <p>Return date: 'finishdate'</p>
+            <p>Adress: 'address'</p>
             <p>Sum: 'sum'</p>
         </div>
     </main>
@@ -62,6 +64,7 @@ namespace Year2_Lab1
             fileContent = Regex.Replace(fileContent, "'startdate'", receipt.startdate.ToString());
             fileContent = Regex.Replace(fileContent, "'finishdate'", receipt.finishdate.ToString());
             fileContent = Regex.Replace(fileContent, "'sum'", receipt.sum.ToString());
+            fileContent = Regex.Replace(fileContent, "'address'", department.ToString());
             PdfDocument pdf = PdfGenerator.GeneratePdf(fileContent, PageSize.A4);
             pdf.Save("document.pdf");
         }

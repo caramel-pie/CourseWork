@@ -34,6 +34,8 @@
             label1 = new Label();
             labelType = new Label();
             buttonEX = new Button();
+            statbutton = new Button();
+            statBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -61,11 +63,11 @@
             // 
             dataGridView1.BackgroundColor = Color.MistyRose;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 195);
+            dataGridView1.Location = new Point(12, 234);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(776, 248);
+            dataGridView1.Size = new Size(776, 209);
             dataGridView1.TabIndex = 4;
             // 
             // label1
@@ -100,12 +102,36 @@
             buttonEX.UseVisualStyleBackColor = false;
             buttonEX.Click += buttonEX_Click;
             // 
+            // statbutton
+            // 
+            statbutton.Cursor = Cursors.Hand;
+            statbutton.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
+            statbutton.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            statbutton.Location = new Point(269, 194);
+            statbutton.Name = "statbutton";
+            statbutton.Size = new Size(112, 34);
+            statbutton.TabIndex = 63;
+            statbutton.Text = "Run";
+            statbutton.UseVisualStyleBackColor = true;
+            statbutton.Click += statbutton_Click;
+            // 
+            // statBox
+            // 
+            statBox.FormattingEnabled = true;
+            statBox.Items.AddRange(new object[] { "Most valuable departments", "Count by material" });
+            statBox.Location = new Point(12, 194);
+            statBox.Name = "statBox";
+            statBox.Size = new Size(251, 33);
+            statBox.TabIndex = 64;
+            // 
             // Queries
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(800, 466);
+            Controls.Add(statBox);
+            Controls.Add(statbutton);
             Controls.Add(buttonEX);
             Controls.Add(labelType);
             Controls.Add(label1);
@@ -127,5 +153,7 @@
         private Label label1;
         private Label labelType;
         private Button buttonEX;
+        private Button statbutton;
+        private ComboBox statBox;
     }
 }

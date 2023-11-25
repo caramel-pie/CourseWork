@@ -42,6 +42,8 @@
             dateTimePicker1 = new DateTimePicker();
             typeBox = new ComboBox();
             buttonEX = new Button();
+            departBox = new ComboBox();
+            label4 = new Label();
             SuspendLayout();
             // 
             // buttonSave
@@ -49,7 +51,7 @@
             buttonSave.Cursor = Cursors.Hand;
             buttonSave.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
             buttonSave.Font = new Font("Lucida Fax", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSave.Location = new Point(209, 464);
+            buttonSave.Location = new Point(216, 532);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(112, 39);
             buttonSave.TabIndex = 25;
@@ -106,7 +108,7 @@
             // 
             labelType.AutoSize = true;
             labelType.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            labelType.Location = new Point(185, 40);
+            labelType.Location = new Point(182, 42);
             labelType.Name = "labelType";
             labelType.Size = new Size(179, 23);
             labelType.TabIndex = 14;
@@ -162,7 +164,7 @@
             // typeBox
             // 
             typeBox.FormattingEnabled = true;
-            typeBox.Location = new Point(129, 66);
+            typeBox.Location = new Point(126, 68);
             typeBox.Name = "typeBox";
             typeBox.Size = new Size(300, 33);
             typeBox.TabIndex = 33;
@@ -181,12 +183,32 @@
             buttonEX.UseVisualStyleBackColor = false;
             buttonEX.Click += buttonEX_Click;
             // 
+            // departBox
+            // 
+            departBox.FormattingEnabled = true;
+            departBox.Location = new Point(126, 473);
+            departBox.Name = "departBox";
+            departBox.Size = new Size(300, 33);
+            departBox.TabIndex = 64;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(151, 447);
+            label4.Name = "label4";
+            label4.Size = new Size(251, 23);
+            label4.TabIndex = 63;
+            label4.Text = "Choose the department:";
+            // 
             // AddItem
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
-            ClientSize = new Size(543, 535);
+            ClientSize = new Size(543, 583);
+            Controls.Add(departBox);
+            Controls.Add(label4);
             Controls.Add(buttonEX);
             Controls.Add(typeBox);
             Controls.Add(dateTimePicker1);
@@ -227,5 +249,7 @@
         private Label label3;
         private ComboBox depBox;
         private Button buttonEX;
+        private ComboBox departBox;
+        private Label label4;
     }
 }

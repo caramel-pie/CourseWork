@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Year2_Lab1.Utils;
 
 namespace Year2_Lab1
 {
@@ -33,6 +34,18 @@ namespace Year2_Lab1
         private void buttonEX_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void statbutton_Click(object sender, EventArgs e)
+        {
+            if (statBox.Text == "Most valuable departments")
+            {
+                dataGridView1.DataSource = Stats.getGeneralValue().Tables[0];
+            }
+            else if (statBox.Text == "Count by material")
+            {
+                dataGridView1.DataSource = Stats.getCountByMaterial().Tables[0];
+            }
         }
     }
 }

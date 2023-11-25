@@ -13,17 +13,19 @@ namespace Year2_Lab1.Models
         public string condition { get; set; }
         public int pledget { get; set; }
         public int id { get; set; }
-        public Item(uint material_id, string title, string condition, int pledget, int id)
+        public uint department_id { get; set; }
+        public Item(uint material_id, string title, string condition, int pledget, uint department_id, int id)
         {
             this.material_id = material_id;
             this.title = title;
             this.pledget = pledget;
             this.condition = condition;
+            this.department_id = department_id;
             this.id = id;
         }
         public static Item getEmpty
         {
-            get { return new Item(0, "", "", 0, 0); }
+            get { return new Item(0, "", "", 0, 0, 0); }
         }
     }
 }

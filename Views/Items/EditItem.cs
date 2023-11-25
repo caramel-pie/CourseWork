@@ -29,7 +29,8 @@ namespace Year2_Lab1
             if (!string.IsNullOrEmpty(typeBox.Text) && !string.IsNullOrEmpty(titleBox.Text) && !string.IsNullOrEmpty(condBox.Text) && isValidPledget)
             {
                 uint matid = uint.Parse(typeBox.Text.Split()[0]);
-                Item item = new Item(matid, titleBox.Text, condBox.Text, pledget, int.Parse(Boxid.Text));
+                uint depid = uint.Parse(departBox.Text.Split()[0]);
+                Item item = new Item(matid, titleBox.Text, condBox.Text, pledget, depid, int.Parse(Boxid.Text));
                 int clientID = Convert.ToInt32(owBox.Text);
                 Receipt receipt = new Receipt(DateTime.Now, dateTimePicker1.Value, pledget, clientID, int.Parse(Boxid.Text), pledget);
                 if (DataBase.getInstance.UpdateItemData(item, receipt, clientID) == 1)
@@ -56,6 +57,11 @@ namespace Year2_Lab1
             foreach (var material in materials)
             {
                 typeBox.Items.Add(material.ToString());
+            }
+            var departments = DataBase.getInstance.DepartmentChoice();
+            foreach (var department in departments)
+            {
+                departBox.Items.Add(department.ToString());
             }
         }
 
