@@ -3,9 +3,9 @@ using Year2_Lab1.Views.Workers;
 
 namespace Year2_Lab1
 {
-    public partial class Main : Form
+    public partial class MainA : Form
     {
-        public Main()
+        public MainA()
         {
             InitializeComponent();
         }
@@ -103,18 +103,6 @@ namespace Year2_Lab1
         private void workerToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new EditWorker().Show();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            var login_result = DataBase.getInstance.Login(int.Parse(idBox.Text.ToString()), logBox.Text);
-            if (login_result == 1)
-            {
-                new MainA().Show();
-            }
-            else if (login_result == 2)
-                new MainW().Show();
-            else MessageBox.Show("Incorrect data");
         }
     }
 }

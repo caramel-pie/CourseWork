@@ -14,4 +14,13 @@
     <PackageReference Include="MySql.Data" Version="8.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="MainW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

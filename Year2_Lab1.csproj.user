@@ -40,5 +40,14 @@
     <Compile Update="Views\Queries.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Workers\AddWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Workers\EditWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Workers\WorkerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

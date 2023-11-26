@@ -93,6 +93,22 @@ namespace Year2_Lab1
             cmd2.Parameters.Add("@ii", MySqlDbType.Int64).Value = receipt.itemid;
             return cmd2.ExecuteNonQuery(); 
         }
+        public int CreateWorker(Worker worker)
+        {
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `workers`(`name`, `surname`, `date_of_birth`, `identif_code`, `telephone`, `email`, `adress`, `cardnum`, `position_id`, `system_password`, `department_id`) VALUES (@n, @s, @bd, @ide, @tel, @em, @ad, @card, @pos, @pas, @dep)", this.GetConnection());
+            cmd.Parameters.Add("@n", MySqlDbType.VarChar).Value = worker.name;
+            cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = worker.surname;
+            cmd.Parameters.Add("@bd", MySqlDbType.DateTime).Value = worker.birthday;
+            cmd.Parameters.Add("@ide", MySqlDbType.VarChar).Value = worker.identification;
+            cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = worker.phone;
+            cmd.Parameters.Add("@em", MySqlDbType.VarChar).Value = worker.email;
+            cmd.Parameters.Add("@ad", MySqlDbType.VarChar).Value = worker.adress;
+            cmd.Parameters.Add("@card", MySqlDbType.Int64).Value = worker.cardnum;
+            cmd.Parameters.Add("@pos", MySqlDbType.VarChar).Value = worker.position;
+            cmd.Parameters.Add("@pas", MySqlDbType.VarChar).Value = worker.password;
+            cmd.Parameters.Add("@dep", MySqlDbType.VarChar).Value = worker.department;
+            return cmd.ExecuteNonQuery();
+        }
         public bool ClientPresent(int id)
         {
             DataTable table = new DataTable();
@@ -112,6 +128,12 @@ namespace Year2_Lab1
         public int DeleteItem(int id)
         {
             MySqlCommand cmd = new MySqlCommand("DELETE FROM `items` WHERE `id` = @id", this.GetConnection());
+            cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = id;
+            return cmd.ExecuteNonQuery();
+        }
+        public int FireWorker(int id)
+        {
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM `workers` WHERE `id` = @id", this.GetConnection());
             cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = id;
             return cmd.ExecuteNonQuery();
         }
@@ -146,6 +168,23 @@ namespace Year2_Lab1
             cmd2.Parameters.Add("@ci", MySqlDbType.VarChar).Value = oid;
             cmd2.Parameters.Add("@ii", MySqlDbType.Int64).Value = item.id;
             return cmd2.ExecuteNonQuery();
+        }
+        public int UpdateWorker(Worker worker)
+        {
+            MySqlCommand cmd = new MySqlCommand("UPDATE `workers` SET `name`=@n,`surname`=@s,`date_of_birth`=@bd,`identif_code`=@ide,`telephone`=@tel,`email`=@em,`adress`=@ad,`cardnum`=@card,`position_id`=@pos,`system_password`=@pas,`department_id`=@dep WHERE `id`=@id", this.GetConnection());
+            cmd.Parameters.Add("@n", MySqlDbType.VarChar).Value = worker.name;
+            cmd.Parameters.Add("@s", MySqlDbType.VarChar).Value = worker.surname;
+            cmd.Parameters.Add("@bd", MySqlDbType.DateTime).Value = worker.birthday;
+            cmd.Parameters.Add("@ide", MySqlDbType.VarChar).Value = worker.identification;
+            cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = worker.phone;
+            cmd.Parameters.Add("@em", MySqlDbType.VarChar).Value = worker.email;
+            cmd.Parameters.Add("@ad", MySqlDbType.VarChar).Value = worker.adress;
+            cmd.Parameters.Add("@card", MySqlDbType.Int64).Value = worker.cardnum;
+            cmd.Parameters.Add("@pos", MySqlDbType.VarChar).Value = worker.position;
+            cmd.Parameters.Add("@pas", MySqlDbType.VarChar).Value = worker.password;
+            cmd.Parameters.Add("@dep", MySqlDbType.VarChar).Value = worker.department;
+            cmd.Parameters.Add("@id", MySqlDbType.Int64).Value = worker.id;
+            return cmd.ExecuteNonQuery();
         }
         public Item GetItem(int id)
         {
@@ -202,6 +241,25 @@ namespace Year2_Lab1
             client.docnum = Convert.ToInt32(row["docnum"].ToString());
             client.id = id;
             return client;
+        }
+        public Worker GetWorker(int id)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM `workers` WHERE `id`=@id", this.GetConnection());
+            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            Worker worker = Worker.getEmpty;
+            if (dataTable.Rows.Count == 0)
+                return worker;
+            DataRow row = dataTable.Rows[0];
+            worker.name = row["name"].ToString();
+            worker.surname = row["surname"].ToString();
+            worker.adress = row["adress"].ToString();
+            worker.position = Convert.ToInt32(row["position_id"].ToString());
+            worker.email = row["email"].ToString();
+            worker.id = id;
+            return worker;
         }
         public Receipt GetReceipt(int itemID)
         {
@@ -282,6 +340,24 @@ namespace Year2_Lab1
             adapter.Fill(items);
             return items;
         }
+        public int Login(int id, string password)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT `system_password`, `position_id` FROM `workers` WHERE `id`=@id", this.GetConnection());
+            cmd.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            DataRow row = dataTable.Rows[0];
+            MessageBox.Show(row["system_password"].ToString());
+            MessageBox.Show(password);
+            MessageBox.Show(row["position_id"].ToString()); 
+            if (row["system_password"] == password)
+            {
+                MessageBox.Show("true");
+                return int.Parse(row["position_id"].ToString());
+            }
+            return 0;
 
+        }
     }
 }

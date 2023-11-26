@@ -118,7 +118,7 @@
             // statBox
             // 
             statBox.FormattingEnabled = true;
-            statBox.Items.AddRange(new object[] { "Most valuable departments", "Count by material" });
+            statBox.Items.AddRange(new object[] { "Most valuable departments", "Count by material", "Count by department", "Sum by client" });
             statBox.Location = new Point(12, 194);
             statBox.Name = "statBox";
             statBox.Size = new Size(251, 33);

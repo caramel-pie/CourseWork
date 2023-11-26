@@ -35,8 +35,10 @@ namespace Year2_Lab1
             if (!string.IsNullOrEmpty(client.name) && !string.IsNullOrEmpty(client.surname) && isValidAge)
             {
                 if (DataBase.getInstance.CreateClient(client) == 1)
+                {
                     MessageBox.Show("Success");
-                //new ClientProfile().Show();
+                    new ClientProfile().Show();
+                }
                 else
                     MessageBox.Show("Error");
             }

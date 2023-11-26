@@ -25,7 +25,7 @@ namespace Year2_Lab1.Models
         }
         public string ToString()
         {
-            return $"{id}) {adress}";
+            return $"{id} {adress}";
         }
     }
 }

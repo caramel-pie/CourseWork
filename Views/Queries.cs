@@ -46,6 +46,14 @@ namespace Year2_Lab1
             {
                 dataGridView1.DataSource = Stats.getCountByMaterial().Tables[0];
             }
+            else if (statBox.Text == "Count by department")
+            {
+                dataGridView1.DataSource = Stats.getCountByDepartment().Tables[0];
+            }
+            else if (statBox.Text == "Sum by client")
+            {
+                dataGridView1.DataSource = Stats.getSumByClient().Tables[0];
+            }
         }
     }
 }
