@@ -12,7 +12,11 @@ namespace Year2_Lab1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var departments = DataBase.getInstance.DepartmentChoice();
+            foreach (var department in departments)
+            {
+                depBox.Items.Add(department.ToString());
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,6 +107,12 @@ namespace Year2_Lab1
         private void workerToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             new AddWorker().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var dep = DataBase.getInstance.GetDepartment(uint.Parse(depBox.Text.Split()[0]));
+            Printer.DepartmentReport(dep);
         }
     }
 }

@@ -371,23 +371,36 @@ namespace Year2_Lab1
                 data.Add(uint.Parse(row["department_id"].ToString()), uint.Parse(row["cou"].ToString()));
             }
             var division = data.Values.Aggregate((a, b) => a + b) / data.Count;
-            MySqlCommand cmdUPD = new MySqlCommand("UPDATE `items`\r\nJOIN (SELECT `id` FROM `items` WHERE `department_id` = @fdit) AS subquery\r\nON `items`.`id` = subquery.`id`\r\nSET `items`.`department_id` = @deid", this.GetConnection());
+            MessageBox.Show(division.ToString());
+            MySqlCommand cmdUPD = new MySqlCommand("UPDATE `items` JOIN (SELECT `id` FROM `items` WHERE `department_id` = @fdit LIMIT 1) AS subquery ON `items`.`id` = subquery.`id` SET `items`.`department_id` = @deid", this.GetConnection());
             foreach (uint i in data.Keys)
             {
                 while (data[i] > division + 1)
                 {
                     try
                     {
-                        var toid = data.Where((a) => a.Value < division - 1).ToList()[0].Key;
-                        cmdUPD.Parameters.Add("@deid", MySqlDbType.Int32).Value = toid;
-                        cmdUPD.Parameters.Add("@fdit", MySqlDbType.Int32).Value = i;
-                        cmdUPD.ExecuteNonQuery();
-                        data[i]--;
-                        data[toid]++;
-                        cmdUPD = new MySqlCommand("UPDATE `items`\r\nJOIN (SELECT `id` FROM `items` WHERE `department_id` = @fdit) AS subquery\r\nON `items`.`id` = subquery.`id`\r\nSET `items`.`department_id` = @deid", this.GetConnection());
+                        // Find a department with a count less than division - 1
+                        var toid = data.Where(a => a.Value < division - 1).OrderByDescending(a => a.Value).FirstOrDefault().Key;
+
+                        // Check if a suitable department was found
+                        if (toid != 0)
+                        {
+                            cmdUPD.Parameters.Clear(); // Clear existing parameters
+                            cmdUPD.Parameters.Add("@deid", MySqlDbType.Int32).Value = toid;
+                            cmdUPD.Parameters.Add("@fdit", MySqlDbType.Int32).Value = i;
+                            cmdUPD.ExecuteNonQuery();
+                            data[i]--;
+                            data[toid]++;
+                        }
+                        else
+                        {
+                            // Break the loop if no suitable department is found
+                            break;
+                        }
                     }
                     catch
                     {
+                        // Handle exceptions if needed
                         break;
                     }
                 }
