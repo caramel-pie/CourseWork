@@ -90,11 +90,6 @@ namespace Year2_Lab1
             new ItemProfile().Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            new AddWorker().Show();
-        }
-
         private void workerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new WorkerProfile().Show();
@@ -103,6 +98,11 @@ namespace Year2_Lab1
         private void workerToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new EditWorker().Show();
+        }
+
+        private void workerToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new AddWorker().Show();
         }
     }
 }

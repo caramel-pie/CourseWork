@@ -43,14 +43,11 @@
             showItemProfileToolStripMenuItem = new ToolStripMenuItem();
             clientToolStripMenuItem3 = new ToolStripMenuItem();
             itemToolStripMenuItem3 = new ToolStripMenuItem();
-            workerToolStripMenuItem = new ToolStripMenuItem();
             clientsButton = new Button();
             itemsButton = new Button();
             SQLbutton = new Button();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
-            workerToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,14 +89,14 @@
             // clientToolStripMenuItem
             // 
             clientToolStripMenuItem.Name = "clientToolStripMenuItem";
-            clientToolStripMenuItem.Size = new Size(170, 34);
+            clientToolStripMenuItem.Size = new Size(270, 34);
             clientToolStripMenuItem.Text = "Client";
             clientToolStripMenuItem.Click += clientToolStripMenuItem_Click;
             // 
             // itemToolStripMenuItem
             // 
             itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            itemToolStripMenuItem.Size = new Size(170, 34);
+            itemToolStripMenuItem.Size = new Size(270, 34);
             itemToolStripMenuItem.Text = "Item ";
             itemToolStripMenuItem.Click += itemToolStripMenuItem_Click;
             // 
@@ -114,20 +111,20 @@
             // clientToolStripMenuItem1
             // 
             clientToolStripMenuItem1.Name = "clientToolStripMenuItem1";
-            clientToolStripMenuItem1.Size = new Size(170, 34);
+            clientToolStripMenuItem1.Size = new Size(270, 34);
             clientToolStripMenuItem1.Text = "Client";
             clientToolStripMenuItem1.Click += clientToolStripMenuItem1_Click;
             // 
             // itemToolStripMenuItem1
             // 
             itemToolStripMenuItem1.Name = "itemToolStripMenuItem1";
-            itemToolStripMenuItem1.Size = new Size(170, 34);
+            itemToolStripMenuItem1.Size = new Size(270, 34);
             itemToolStripMenuItem1.Text = "Item ";
             itemToolStripMenuItem1.Click += itemToolStripMenuItem1_Click;
             // 
             // editClientToolStripMenuItem
             // 
-            editClientToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientToolStripMenuItem2, itemToolStripMenuItem2, workerToolStripMenuItem1 });
+            editClientToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientToolStripMenuItem2, itemToolStripMenuItem2 });
             editClientToolStripMenuItem.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
             editClientToolStripMenuItem.Name = "editClientToolStripMenuItem";
             editClientToolStripMenuItem.Size = new Size(270, 34);
@@ -149,7 +146,7 @@
             // 
             // showItemProfileToolStripMenuItem
             // 
-            showItemProfileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientToolStripMenuItem3, itemToolStripMenuItem3, workerToolStripMenuItem });
+            showItemProfileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientToolStripMenuItem3, itemToolStripMenuItem3 });
             showItemProfileToolStripMenuItem.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
             showItemProfileToolStripMenuItem.Name = "showItemProfileToolStripMenuItem";
             showItemProfileToolStripMenuItem.Size = new Size(270, 34);
@@ -169,13 +166,6 @@
             itemToolStripMenuItem3.Size = new Size(270, 34);
             itemToolStripMenuItem3.Text = "Item";
             itemToolStripMenuItem3.Click += itemToolStripMenuItem3_Click;
-            // 
-            // workerToolStripMenuItem
-            // 
-            workerToolStripMenuItem.Name = "workerToolStripMenuItem";
-            workerToolStripMenuItem.Size = new Size(270, 34);
-            workerToolStripMenuItem.Text = "Worker";
-            workerToolStripMenuItem.Click += workerToolStripMenuItem_Click;
             // 
             // clientsButton
             // 
@@ -239,33 +229,12 @@
             button2.Text = "Search";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 179, 218);
-            button3.Font = new Font("Lucida Fax", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(265, 396);
-            button3.Name = "button3";
-            button3.Size = new Size(155, 55);
-            button3.TabIndex = 6;
-            button3.Text = "Workers";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // workerToolStripMenuItem1
-            // 
-            workerToolStripMenuItem1.Name = "workerToolStripMenuItem1";
-            workerToolStripMenuItem1.Size = new Size(270, 34);
-            workerToolStripMenuItem1.Text = "Worker";
-            workerToolStripMenuItem1.Click += workerToolStripMenuItem1_Click;
-            // 
-            // Main
+            // MainW
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 105, 183);
             ClientSize = new Size(878, 544);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(SQLbutton);
@@ -274,7 +243,7 @@
             Controls.Add(menuStrip1);
             ForeColor = Color.Black;
             MainMenuStrip = menuStrip1;
-            Name = "Main";
+            Name = "MainW";
             Text = "Pawnshop";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
@@ -305,8 +274,5 @@
         private ToolStripMenuItem clientToolStripMenuItem3;
         private ToolStripMenuItem itemToolStripMenuItem3;
         private Button button2;
-        private Button button3;
-        private ToolStripMenuItem workerToolStripMenuItem;
-        private ToolStripMenuItem workerToolStripMenuItem1;
     }
 }

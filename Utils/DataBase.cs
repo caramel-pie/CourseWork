@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
 using Year2_Lab1.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Year2_Lab1
 {
@@ -85,6 +87,7 @@ namespace Year2_Lab1
             receipt.itemid = reader.GetInt32(0);
             this.closeConnection();
             this.openConnection();
+            Automatization();
             MySqlCommand cmd2 = new MySqlCommand("INSERT INTO `receipt` (`startdate`, `finishdate`, `sum`, `clientid`, `itemid`) VALUES(@sd, @fd, @s, @ci, @ii)", this.GetConnection());
             cmd2.Parameters.Add("@sd", MySqlDbType.DateTime).Value = receipt.startdate;
             cmd2.Parameters.Add("@fd", MySqlDbType.DateTime).Value = receipt.finishdate;
@@ -348,15 +351,47 @@ namespace Year2_Lab1
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             DataRow row = dataTable.Rows[0];
-            MessageBox.Show(row["system_password"].ToString());
-            MessageBox.Show(password);
-            MessageBox.Show(row["position_id"].ToString()); 
-            if (row["system_password"] == password)
+            var system_password = row["system_password"].ToString();
+            if (system_password == password)
             {
-                MessageBox.Show("true");
                 return int.Parse(row["position_id"].ToString());
             }
             return 0;
+
+        }
+        public void Automatization()
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT `department_id`, COUNT(`id`) AS 'cou' FROM `items` GROUP BY `department_id`", this.GetConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            Dictionary<uint, uint> data = new Dictionary<uint, uint>();
+            foreach (DataRow row in dataTable.Rows)
+            {
+                data.Add(uint.Parse(row["department_id"].ToString()), uint.Parse(row["cou"].ToString()));
+            }
+            var division = data.Values.Aggregate((a, b) => a + b) / data.Count;
+            MySqlCommand cmdUPD = new MySqlCommand("UPDATE `items`\r\nJOIN (SELECT `id` FROM `items` WHERE `department_id` = @fdit) AS subquery\r\nON `items`.`id` = subquery.`id`\r\nSET `items`.`department_id` = @deid", this.GetConnection());
+            foreach (uint i in data.Keys)
+            {
+                while (data[i] > division + 1)
+                {
+                    try
+                    {
+                        var toid = data.Where((a) => a.Value < division - 1).ToList()[0].Key;
+                        cmdUPD.Parameters.Add("@deid", MySqlDbType.Int32).Value = toid;
+                        cmdUPD.Parameters.Add("@fdit", MySqlDbType.Int32).Value = i;
+                        cmdUPD.ExecuteNonQuery();
+                        data[i]--;
+                        data[toid]++;
+                        cmdUPD = new MySqlCommand("UPDATE `items`\r\nJOIN (SELECT `id` FROM `items` WHERE `department_id` = @fdit) AS subquery\r\nON `items`.`id` = subquery.`id`\r\nSET `items`.`department_id` = @deid", this.GetConnection());
+                    }
+                    catch
+                    {
+                        break;
+                    }
+                }
+            }
 
         }
     }
