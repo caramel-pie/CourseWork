@@ -88,7 +88,7 @@ namespace Year2_Lab1
 </head>
 <body>
     <main>
-        <h1>Report: 'id'</h1>
+        <h1>Report:</h1>
         <h2>Department info:</h2>
         <div>
             <p>Address: {dep.adress}</p>
